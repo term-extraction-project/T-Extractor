@@ -1,33 +1,45 @@
 # T-Extractor
 
-T-Extractor is an unsupervised annotator that extracts terms and named entities based on rules, statistical and semantic analysis.
+T-Extractor is an unsupervised annotation tool designed to extract terms and named entities using a combination of rule-based, statistical, and semantic analysis methods. Currently, T-Extractor supports English, French, and Dutch languages.
 
-#Installation and Usage
 
-Здесь представлен код для Гугл Коллаба по установке и применению T-Extractor. Также код доступен по [ссылке](https://colab.research.google.com/drive/1eYdumGQ8bA3MUd-MCGIdBoNnX3Nm_S_N?usp=sharing).
+# Installation and Usage
 
-Перед применением T-Extractor необходимо установить нужные бублеотеки и модели.
+This guide provides instructions for installing and using T-Extractor in Google Colab. You can also access the code via the following [link](https://colab.research.google.com/drive/1eYdumGQ8bA3MUd-MCGIdBoNnX3Nm_S_N?usp=sharing).
+
+Before using T-Extractor, ensure that the required libraries and models are installed.
+
+## Installation
+
+First, clone the Phrase Extractor repository and install the necessary dependencies:
 
 ```bash
-# Установка phrase extractor
+# Installing Phrase Extractor
 !git clone https://github.com/term-extraction-project/multi_word_expressions.git
 %cd multi_word_expressions
 
-# Скачивание sentence-transformers для энкодинга предложений и кандидатов
+# Download sentence-transformers for encoding sentences and candidates
 !!pip install sentence-transformers
 
-# Скачивание нужной модели spacy для францизкого или нидерландского
-!python3 -m spacy download fr_core_news_sm    # для Французкого
-!python3 -m spacy download nl_core_news_sm    # для Нидерландского
-```
-Далее нужно установить сам T-Extractor
-```bash
-!git clone https://github.com/term-extraction-project/T-Extractor.git
-import sys
-sys.path.append('/content/T-Extractor')
+# Download the required SpaCy model for French or Dutch
+!python3 -m spacy download fr_core_news_sm    # for French
+!python3 -m spacy download nl_core_news_sm    # for Dutch
+
 ```
 
-Использование T-Extractor
+Next, install **T-Extractor**:
+
+```bash
+
+!git clone https://github.com/term-extraction-project/T-Extractor.git
+import sys
+sys.path.append('/content/T-Extractor') # Path to the python file where the T-Extractor code is located
+
+```
+
+## Usage
+
+To use T-Extractor, import the module and process the text as shown below:
 
 ```bash
 from unsupervised_term_extractor import T_Extractor
@@ -42,6 +54,7 @@ candidatese = extractor.term_extraction()
 print(candidatese)
 
 ```
+
 
 # Оценка эффективности
 
