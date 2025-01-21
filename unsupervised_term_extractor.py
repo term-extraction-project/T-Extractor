@@ -127,17 +127,36 @@ class T_Extractor:
         for ind, text in enumerate(texts):
 
             all_texts=" .".join(texts[:ind] + texts[ind+1:]) + " .".join(self.additional_text)
-
-            extractor = EnglishPhraseExtractor(text=text,                    #EnglishPhraseExtractor        FrancePhraseExtractor      DutchPhraseExtractor
-                                               stop_words=stop_words,
-                                               cohision_filter=self.cohision_filter,
-                                               additional_text=all_texts,
-                                               list_seq=mwe_pos_patterns,
-                                               f_raw_sc= self.f_raw,
-                                               f_req_sc=self.f_req)
-            candidatese = extractor.extract_phrases()
-            phrases += candidatese
-
+            if self.lang=="en":
+                    extractor = EnglishPhraseExtractor(text=text,                   
+                                                       stop_words=stop_words,
+                                                       cohision_filter=self.cohision_filter,
+                                                       additional_text=all_texts,
+                                                       list_seq=mwe_pos_patterns,
+                                                       f_raw_sc= self.f_raw,
+                                                       f_req_sc=self.f_req)
+                    candidatese = extractor.extract_phrases()
+                    phrases += candidatese
+            elif self.lang=="fr":
+                  extractor = FrancePhraseExtractor(text=text,                    
+                                                       stop_words=stop_words,
+                                                       cohision_filter=self.cohision_filter,
+                                                       additional_text=all_texts,
+                                                       list_seq=mwe_pos_patterns,
+                                                       f_raw_sc= self.f_raw,
+                                                       f_req_sc=self.f_req)
+                    candidatese = extractor.extract_phrases()
+                    phrases += candidatese
+            elif self.lang=="nl": 
+                 extractor = DutchPhraseExtractor(text=text,                    
+                                                       stop_words=stop_words,
+                                                       cohision_filter=self.cohision_filter,
+                                                       additional_text=all_texts,
+                                                       list_seq=mwe_pos_patterns,
+                                                       f_raw_sc= self.f_raw,
+                                                       f_req_sc=self.f_req)
+                    candidatese = extractor.extract_phrases()
+                    phrases += candidatese
 
         # Modify tokenizer infix patterns
         infixes = (
