@@ -5,8 +5,6 @@ import spacy
 
 import requests
 
-%cd multi_word_expressions
-
 
 from spacy.lang.char_classes import ALPHA, ALPHA_LOWER, ALPHA_UPPER
 from spacy.lang.char_classes import CONCAT_QUOTES, LIST_ELLIPSES, LIST_ICONS
