@@ -138,7 +138,7 @@ class T_Extractor:
                     candidatese = extractor.extract_phrases()
                     phrases += candidatese
             elif self.lang=="fr":
-                    extractor = FrancePhraseExtractor(text=text,                    
+                    extractor = FrenchPhraseExtractor(text=text,                    
                                                        stop_words=stop_words,
                                                        cohision_filter=self.cohision_filter,
                                                        additional_text=all_texts,
