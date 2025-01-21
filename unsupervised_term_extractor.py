@@ -43,7 +43,7 @@ def define_pos_pattern(language):
                           ]
 
     elif language=="fr":
-      pos_tag_patterns=[   "PROPN","NOUN","ADJ"
+      pos_tag_patterns=["PROPN","NOUN","ADJ",
                         [["NOUN","ADJ","PROPN"],"*"],
                         [["NOUN","ADJ"],"*","ADP",["NOUN","ADJ"],"*"],
                         [["NOUN","ADJ"],"*","ADP","DET",["NOUN","ADJ"],"*"],
@@ -55,7 +55,7 @@ def define_pos_pattern(language):
 
 
     elif language=="nl":
-      pos_tag_patterns=["PROPN","NOUN","ADJ"
+      pos_tag_patterns=["PROPN","NOUN","ADJ",
                         [["NOUN","ADJ","PROPN","SYM"],"*"],
                         [["NOUN","ADJ"],"*","ADP",["NOUN","ADJ","CCONJ"],"*"],
                         ["NOUN","ADP","NOUN","ADP","NOUN"],
