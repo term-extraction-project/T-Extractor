@@ -3,6 +3,7 @@
 T-Extractor is an unsupervised annotator that extracts terms and named entities based on rules, statistical and semantic analysis.
 
 #Installation and Usage
+
 Здесь представлен код для Гугл Коллаба по установке и применению T-Extractor. Также код доступен по [ссылке](https://colab.research.google.com/drive/1eYdumGQ8bA3MUd-MCGIdBoNnX3Nm_S_N?usp=sharing).
 
 Перед применением T-Extractor необходимо установить нужные бублеотеки и модели.
