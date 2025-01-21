@@ -14,7 +14,6 @@ from operator import itemgetter
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-!!pip install sentence-transformers
 from sentence_transformers import SentenceTransformer
 
 
