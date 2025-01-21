@@ -107,7 +107,6 @@ class T_Extractor:
 
 
         elif self.lang=="fr":
-              !python3 -m spacy download fr_core_news_sm
               from spacy.lang.fr.examples import sentences
               url = 'https://raw.githubusercontent.com/stopwords-iso/stopwords-fr/master/stopwords-fr.txt'
               stop_words = (requests.get(url).text).split("\n")
@@ -116,7 +115,6 @@ class T_Extractor:
               model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-mpnet-base-v2')
 
         elif self.lang=="nl":
-              !python3 -m spacy download nl_core_news_sm
               from spacy.lang.nl.examples import sentences
               url = 'https://raw.githubusercontent.com/stopwords-iso/stopwords-nl/master/stopwords-nl.txt'
               stop_words = (requests.get(url).text).split("\n")
