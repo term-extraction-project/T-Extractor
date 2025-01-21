@@ -42,13 +42,38 @@ sys.path.append('/content/T-Extractor') # Path to the python file where the T-Ex
 To use T-Extractor, import the module and process the text as shown below:
 
 ```bash
-from unsupervised_term_extractor import T_Extractor
+from unsupervised_term_extractor import T_Extractor  # Connecting T_Extractor
 
+# The input is a list containing many texts or one text in string format.
 text_en = ["""
-T-Extractor is an unsupervised annotator that extracts terms and named entities based on rules, statistical and semantic analysis.
-"""]
+T-Extractor is an unsupervised annotation tool designed to extract terms and named entities using a combination of rule-based, statistical, and semantic analysis methods. Currently, T-Extractor supports English, French, and Dutch languages.
+""",
+"""
+T-Extractor was tested on the ACTER (three languages and four domains) and ACL RD-TEC 2.0 datasets, where the average F1 score was about 40% on English, outperform-ing some supervised methods. """
+]
 
-extractor = T_Extractor(text=text, lang="fr" )
+templetes = [
+              "PROPN",
+              "NOUN",
+              "ADJ",
+              [["PROPN","NOUN"],"*"],
+              ["ADJ",'*', ["PROPN","NOUN"], '*']
+             ]
+
+# Model setup
+extractor = T_Extractor(
+                           text = text_en,                 #  Texts from which terms need to be extracted
+                           lang = "en",                    #  Choice of language from English(en), French(fr) and Dutch(nl). English is the default
+                           additional_text = "",           #  If there is text of the same domain as the target. Needed to increase the frequency of phrases. 
+                           cohision_filter = True,         #  Enabled by default. Filtering extracted phrases using frequencies.
+                           f_raw = 9,                      #  Raw frequency threshold
+                           f_req = 3,                      #  Rectified frequency threshold 
+                           pos_tag_patterns = templetes,   #  By default, they are embedded in the model. You can apply your own templates.
+                           topic_score = 0.4,              #  Topic score threshold
+                           abb_extraction = True,          #  Use or not additional rule for extracting abbreviations
+                           propn_seq_extraction = True     #  Use or not additional rule for extracting sequences of proper nouns (PRON)
+                       )
+
 candidatese = extractor.term_extraction()
 
 print(candidatese)
