@@ -5,7 +5,6 @@ import spacy
 
 import requests
 
-!git clone https://github.com/term-extraction-project/multi_word_expressions.git
 %cd multi_word_expressions
 
 
