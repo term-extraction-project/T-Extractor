@@ -86,41 +86,5 @@ print(candidatese)
 T-Extractor был протестирован на набоах данных ACTER и ACL RD-TEC 2.0. Код тестирования доступен на [Гугл Коллаб] (https://colab.research.google.com/drive/1LgGsv5FawMZOVrFhhpIpkrqbgx1q4nu3?usp=sharing). 
 
 
-# Результаты тестирования подхода на на набоах данных ACTER и ACL RD-TEC 2.0
-
-ACL-RD-TEC 2.0 (English)
-
-| Annotator  | Precision (P) | Recall (R) | F1-score (F1) |
-|------------|--------------|------------|--------------|
-| Annotator 1| 35.01         | 61.18      | 44.54        |
-| Annotator 2| 33.77         | 61.77      | 43.67        |
-
-
-Acter Dataset
-
-English
-| Domain | Precision (P) | Recall (R) | F1-score (F1) |
-|--------|--------------|------------|--------------|
-| Corp   | 31.47         | 55.33      | 40.12        |
-| Equi   | 41.56         | 58.16      | 48.48        |
-| Wind   | 28.60         | 58.30      | 38.37        |
-| HTFL   | 43.68         | 48.66      | 46.04        |
-
-French
-| Domain | Precision (P) | Recall (R) | F1-score (F1) |
-|--------|--------------|------------|--------------|
-| Corp   | 25.43         | 53.44      | 34.46        |
-| Equi   | 22.70         | 51.57      | 31.53        |
-| Wind   | 17.42         | 63.02      | 27.30        |
-| HTFL   | 42.51         | 50.84      | 46.31        |
-
-Dutch
-| Domain | Precision (P) | Recall (R) | F1-score (F1) |
-|--------|--------------|------------|--------------|
-| Corp   | 29.03         | 63.78      | 39.90        |
-| Equi   | 35.58         | 65.93      | 46.22        |
-| Wind   | 20.83         | 68.54      | 31.95        |
-| HTFL   | 40.40         | 62.24      | 49.00        
-
 
 О подходе
