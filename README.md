@@ -79,11 +79,13 @@ candidatese = extractor.term_extraction()
 
 print(candidatese)
 
+# Output: ['acl', 'acter', 'annotation', 'english', 'french', 'languages', 't-extractor']
+
 ```
 
 
 # Evaluation
 
-T-Extractor was tested on ACTER and ACL RD-TEC 2.0 datasets. The test code is available on [Гугл Коллаб](https://colab.research.google.com/drive/1LgGsv5FawMZOVrFhhpIpkrqbgx1q4nu3?usp=sharing). 
+T-Extractor was tested on ACTER and ACL RD-TEC 2.0 datasets. The test code is available on [Google Collab](https://colab.research.google.com/drive/1LgGsv5FawMZOVrFhhpIpkrqbgx1q4nu3?usp=sharing). 
 
 
