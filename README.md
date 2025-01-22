@@ -81,10 +81,8 @@ print(candidatese)
 ```
 
 
-# Оценка эффективности
+# Evaluation
 
-T-Extractor был протестирован на набоах данных ACTER и ACL RD-TEC 2.0. Код тестирования доступен на [Гугл Коллаб] (https://colab.research.google.com/drive/1LgGsv5FawMZOVrFhhpIpkrqbgx1q4nu3?usp=sharing). 
+T-Extractor was tested on ACTER and ACL RD-TEC 2.0 datasets. The test code is available on [Гугл Коллаб](https://colab.research.google.com/drive/1LgGsv5FawMZOVrFhhpIpkrqbgx1q4nu3?usp=sharing). 
 
 
-
-О подходе
