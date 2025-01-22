@@ -11,7 +11,17 @@ Before using T-Extractor, ensure that the required libraries and models are inst
 
 ## Installation
 
-First, clone the Phrase Extractor repository and install the necessary dependencies:
+First, install **T-Extractor**:
+
+```bash
+
+!git clone https://github.com/term-extraction-project/T-Extractor.git
+import sys
+sys.path.append('/content/T-Extractor') # Path to the python file where the T-Extractor code is located
+
+```
+
+Next, clone the Phrase Extractor repository and install the necessary dependencies:
 
 ```bash
 # Installing Phrase Extractor
@@ -27,15 +37,6 @@ First, clone the Phrase Extractor repository and install the necessary dependenc
 
 ```
 
-Next, install **T-Extractor**:
-
-```bash
-
-!git clone https://github.com/term-extraction-project/T-Extractor.git
-import sys
-sys.path.append('/content/T-Extractor') # Path to the python file where the T-Extractor code is located
-
-```
 
 ## Usage
 
