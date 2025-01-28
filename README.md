@@ -54,11 +54,11 @@ T-Extractor was tested on the ACTER (three languages and four domains) and ACL R
 ]
 
 templetes = [
-              "PROPN",
-              "NOUN",
-              "ADJ",
-              [["PROPN","NOUN"],"*"],
-              ["ADJ",'*', ["PROPN","NOUN"], '*']
+              "PROPN",  # for unigram extrac
+              "NOUN",   # for unigram extrac
+              "ADJ",    # for unigram extrac
+              [["PROPN","NOUN"],"*"],                  # for phrase extrac
+              ["ADJ",'*', ["PROPN","NOUN"], '*']       # for phrase extrac
              ]
 
 # Model setup
@@ -82,6 +82,45 @@ print(candidatese)
 # Output: ['acl', 'acter', 'annotation', 'english', 'french', 'languages', 't-extractor']
 
 ```
+
+
+### Model setup
+
+Text is fed to the input as a list, even if there is only one text
+
+### Setting up part-of-speech templates
+
+Spacy tags are used to label part-of-speech templates.
+
+Для извлечения униграм нужно просто указать в стринговом формате нужные части речи. Для извлечения фраз каждый шаблон помещайте в отдельный спиок.
+Example:
+```bash
+templetes = [
+              "NOUN", "PROPN",  # for unigram extrac
+              ["ADJ", "PROPN" ],  ["ADJ", "NOUN"]      # for phrase extrac
+             ]
+```
+
+The asterisk (*) is used if the template may contain several consecutive parts of speech after which it is placed.
+
+Example: ADJ *, NOUN
+
+Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+ADJ+NOUN, ADJ+ADJ+ADJ+NOUN and etc.
+
+
+
+Parts of speech in brackets mean that any part of speech from the specified list can be in this place.
+
+Example: ADJ, [ PROPN, NOUN ]
+
+Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN
+
+
+If there is an asterisk sign after the list of parts of speech, it means that you can extract parts of speech one by one if they are in the specified list.
+
+Example: ADJ, [ PROPN, NOUN ]*
+
+Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN, ADJ+NOUN+NOUN, ADJ+NOUN+PROPN+NOUN,   ADJ+NOUN+PROPN+PROPN and etc.
 
 
 # Evaluation
