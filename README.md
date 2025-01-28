@@ -54,11 +54,11 @@ T-Extractor was tested on the ACTER (three languages and four domains) and ACL R
 ]
 
 templetes = [
-              "PROPN",  # for unigram extrac
-              "NOUN",   # for unigram extrac
-              "ADJ",    # for unigram extrac
-              [["PROPN","NOUN"],"*"],                  # for phrase extrac
-              ["ADJ",'*', ["PROPN","NOUN"], '*']       # for phrase extrac
+              "PROPN",  # for unigram extract
+              "NOUN",   # for unigram extract
+              "ADJ",    # for unigram extract
+              [["PROPN","NOUN"],"*"],                  # for phrase extract
+              ["ADJ",'*', ["PROPN","NOUN"], '*']       # for phrase extract
              ]
 
 # Model setup
@@ -96,11 +96,12 @@ Spacy tags are used to label part-of-speech templates.
 Example:
 ```bash
 templetes = [
-              "NOUN", "PROPN",  # for unigram extrac
-              ["ADJ", "PROPN" ],  ["ADJ", "NOUN"]      # for phrase extrac
+              "NOUN", "PROPN",  # for unigram extract
+              ["ADJ", "PROPN" ],  ["ADJ", "NOUN"]      # for phrase extract
              ]
 ```
 
+#### Asterisk (*)
 The asterisk (*) is used if the template may contain several consecutive parts of speech after which it is placed.
 
 Example: ADJ *, NOUN
@@ -108,14 +109,14 @@ Example: ADJ *, NOUN
 Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+ADJ+NOUN, ADJ+ADJ+ADJ+NOUN and etc.
 
 
-
+#### POS-tag in brackets [ PROPN, NOUN ]
 Parts of speech in brackets mean that any part of speech from the specified list can be in this place.
 
 Example: ADJ, [ PROPN, NOUN ]
 
 Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN
 
-
+#### Asterisk (*) after POS-tag in brackets [ PROPN, NOUN ] *
 If there is an asterisk sign after the list of parts of speech, it means that you can extract parts of speech one by one if they are in the specified list.
 
 Example: ADJ, [ PROPN, NOUN ]*
