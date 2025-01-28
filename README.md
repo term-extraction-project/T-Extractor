@@ -101,6 +101,7 @@ templetes = [
              ]
 ```
 
+
 #### Asterisk (*)
 The asterisk (*) is used if the template may contain several consecutive parts of speech after which it is placed.
 
@@ -109,11 +110,15 @@ Example: ADJ *, NOUN
 Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+ADJ+NOUN, ADJ+ADJ+ADJ+NOUN and etc.
 
 
+
 #### POS-tag in brackets [ PROPN, NOUN ]
 Parts of speech in brackets mean that any part of speech from the specified list can be in this place.
+
 Example: ADJ, [ PROPN, NOUN ]
 
 Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN
+
+
 
 #### Asterisk (*) after POS-tag in brackets [ PROPN, NOUN ] *
 If there is an asterisk sign after the list of parts of speech, it means that you can extract parts of speech one by one if they are in the specified list.
