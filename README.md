@@ -111,7 +111,6 @@ Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+ADJ+NOUN, ADJ+ADJ+ADJ+NO
 
 #### POS-tag in brackets [ PROPN, NOUN ]
 Parts of speech in brackets mean that any part of speech from the specified list can be in this place.
-
 Example: ADJ, [ PROPN, NOUN ]
 
 Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN
