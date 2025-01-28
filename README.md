@@ -107,8 +107,10 @@ The asterisk (*) is used if the template may contain several consecutive parts o
 
 Example: ADJ *, NOUN
 
-Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+ADJ+NOUN, ADJ+ADJ+ADJ+NOUN and etc.
-
+Extract phrases with POS-tag patterns as: 
+* ADJ+NOUN
+* ADJ+ADJ+NOUN
+* ADJ+ADJ+ADJ+NOUN and etc.
 
 
 #### POS-tag in brackets [ PROPN, NOUN ]
@@ -116,7 +118,9 @@ Parts of speech in brackets mean that any part of speech from the specified list
 
 Example: ADJ, [ PROPN, NOUN ]
 
-Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN
+Extract phrases with POS-tag patterns as: 
+* ADJ+NOUN
+* ADJ+PROPN
 
 
 
@@ -125,7 +129,12 @@ If there is an asterisk sign after the list of parts of speech, it means that yo
 
 Example: ADJ, [ PROPN, NOUN ]*
 
-Extract phrases with POS-tag patterns as: ADJ+NOUN, ADJ+PROPN, ADJ+NOUN+NOUN, ADJ+NOUN+PROPN+NOUN,   ADJ+NOUN+PROPN+PROPN and etc.
+Extract phrases with POS-tag patterns as: 
+* ADJ+NOUN
+* ADJ+PROPN
+* ADJ+NOUN+NOUN
+* ADJ+NOUN+PROPN+NOUN,
+* ADJ+NOUN+PROPN+PROPN and etc.
 
 
 # Evaluation
