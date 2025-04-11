@@ -437,6 +437,7 @@ for text in texts:
       if len(temp_2) > 0:
         check = True
         temp = temp_2
+        temp_2=""
       temp = (temp + " " + i.text).strip()
     elif i.pos_ == "ADP" and len(temp) > 0:
        temp_2 = temp + " " + i.text
