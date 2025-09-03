@@ -199,29 +199,36 @@ class T_Extractor:
 
         phrase_def=[i for i in set(unigrams) if len(i.split("-"))>1]+[i for i in set(unigrams) if len(i.split("'"))>1]
 
-        sents_encode=[[i,model.encode(i, normalize_embeddings=True)] for i in sents]
-
-        cos_uni=[]
-        for i in set(unigrams)-set(phrase_def):
-          i_en= model.encode(i, normalize_embeddings=True)
-          for s in sents_encode:
-            if i.lower() in s[0].lower():
-              s_en=s[1]
-              topic_score=model.similarity(i_en, s_en).tolist()[0][0]
-              cos_uni.append([i,topic_score])
-
-        cos_mwe=[]
-        for i in set(phrases+phrase_def):
-          i_en= model.encode(i, normalize_embeddings=True)
-          for s in sents_encode:
-            if i.lower() in s[0].lower():
-              s_en=s[1]
-              topic_score=model.similarity(i_en, s_en).tolist()[0][0]
-              cos_mwe.append([i,topic_score])
-
-        uni=[i[0] for i in cos_uni if i[1]>self.topic_score]
-        mwe=[i[0] for i in cos_mwe if i[1]>self.topic_score]
-
+        uni=[]
+        mwe=[]
+        if self.topic_score==-1:
+            sents_encode=[[i,model.encode(i, normalize_embeddings=True)] for i in sents]
+    
+            cos_uni=[]
+            for i in set(unigrams)-set(phrase_def):
+              i_en= model.encode(i, normalize_embeddings=True)
+              for s in sents_encode:
+                if i.lower() in s[0].lower():
+                  s_en=s[1]
+                  topic_score=model.similarity(i_en, s_en).tolist()[0][0]
+                  cos_uni.append([i,topic_score])
+    
+            cos_mwe=[]
+            for i in set(phrases+phrase_def):
+              i_en= model.encode(i, normalize_embeddings=True)
+              for s in sents_encode:
+                if i.lower() in s[0].lower():
+                  s_en=s[1]
+                  topic_score=model.similarity(i_en, s_en).tolist()[0][0]
+                  cos_mwe.append([i,topic_score])
+    
+            uni=[i[0] for i in cos_uni if i[1]>self.topic_score]
+            mwe=[i[0] for i in cos_mwe if i[1]>self.topic_score]
+        
+        else:
+            uni=set(unigrams)-set(phrase_def)
+            mwe=set(phrases+phrase_def)
+        
         propn_sequence=[]
         if self.propn_seq_extraction==True:
               for text in texts:
