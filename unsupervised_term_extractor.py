@@ -201,7 +201,7 @@ class T_Extractor:
 
         uni=[]
         mwe=[]
-        if self.topic_score==-1:
+        if self.topic_score>0:
             sents_encode=[[i,model.encode(i, normalize_embeddings=True)] for i in sents]
     
             cos_uni=[]
