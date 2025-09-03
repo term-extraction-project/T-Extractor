@@ -256,6 +256,6 @@ class T_Extractor:
 
               propn_sequence=[i.lower() for i in set(propn_sequence) if len(set(i.lower()).intersection(set(punc_all+list(string.digits))))==0]
 
-        extracted_terms=set(uni + mwe + abb_lower + propn_sequence)
+        extracted_terms=set(list(uni) + list(mwe) + abb_lower + propn_sequence)
 
         return extracted_terms
